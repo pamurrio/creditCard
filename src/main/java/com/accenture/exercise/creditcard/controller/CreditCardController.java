@@ -16,19 +16,19 @@ public class CreditCardController {
 		CreditCard credi = null;
 		switch (type) {
 		case "SQUA":
-			credi = new SquaCred();
+			credi = new SquaCred(11111l,"Accenture Test", "2020-05-20");
 			break;
 		case "PERE":
-			credi = new PereCredit();
+			credi = new PereCredit(11112l,"Accenture Test", "2020-05-20");
 			break;
 		case "SCO":
-			credi = new ScoCredit();
+			credi = new ScoCredit(11113l,"Accenture Test", "2020-05-20");
 			break;
 		default:
 			break;
 		}
 		if (credi != null) {
-			return amount * credi.tasaOperation();
+			return amount * credi.tasaOperation() / 100;
 		}
 		return 0f;
 	}

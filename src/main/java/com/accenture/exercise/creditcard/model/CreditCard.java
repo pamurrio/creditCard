@@ -1,5 +1,7 @@
 package com.accenture.exercise.creditcard.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class CreditCard {
@@ -7,6 +9,19 @@ public abstract class CreditCard {
 	private Long number;
 	private String cardHolder;
 	private Date expiration;
+	
+	public CreditCard(Long number, String cardHolder, String expiration) {
+		super();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		this.number = number;
+		this.cardHolder = cardHolder;
+		try {
+			this.expiration = format.parse(expiration);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public Long getNumber() {
 		return number;
@@ -41,7 +56,12 @@ public abstract class CreditCard {
 		this.type = type;
 	}
 
-	public abstract String getInfoCard();
+	public String getInfoCard() {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		return "Card Holder:" + getCardHolder() + " - " + "Number Card: " + getNumber()
+		+ " - " + " Date Expiration: " + format.format(getExpiration()) + " - " +
+		"Marca: " + getType();
+	}
 	
 	public abstract Float tasaOperation();
 	
@@ -52,7 +72,10 @@ public abstract class CreditCard {
 		return false;
 	}
 	
-	public Boolean isCardValidInfo(CreditCard card) {
+	public Boolean isCardValidInfo() {
+		if (this.getExpiration().compareTo(new Date()) > 0) {
+			return true;
+		}
 		return false;
 	}
 	

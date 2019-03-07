@@ -12,6 +12,6 @@ public class DataBaseException extends Exception{
 	}
 	
 	public DataBaseException() {
-		super("DataBaseException");
+		super("la base de datos no permite escribir el nuevo saldo del cliente");
 	}
 }

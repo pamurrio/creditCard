@@ -11,6 +11,6 @@ public class SystemContabException extends Exception{
 		super(message);
 	}
 	public SystemContabException() {
-		super("SystemContabException");
+		super("el sistema contable no responde y/o no atiende los pedidos");
 	}
 }

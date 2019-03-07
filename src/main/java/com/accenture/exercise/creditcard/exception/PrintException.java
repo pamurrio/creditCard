@@ -11,6 +11,6 @@ public class PrintException extends Exception{
 		super(message);
 	}
 	public PrintException() {
-		super("PrintException");
+		super("Se trabo el Papel");
 	}
 }

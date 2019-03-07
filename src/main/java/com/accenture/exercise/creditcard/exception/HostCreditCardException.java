@@ -12,6 +12,6 @@ public class HostCreditCardException extends Exception{
 	}
 	
 	public HostCreditCardException() {
-		super("HostCreditCardException");
+		super("el host de la tarjeta de crédito está caído");
 	}
 }

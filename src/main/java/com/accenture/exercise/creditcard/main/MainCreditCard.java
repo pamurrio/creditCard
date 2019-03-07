@@ -9,15 +9,15 @@ public class MainCreditCard {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		CreditCard squa = new SquaCred();
-		CreditCard sco = new ScoCredit();
-		CreditCard pere = new PereCredit();
+		CreditCard squa = new SquaCred(11111l,"Accenture Test", "2020-05-20");
+		CreditCard sco = new ScoCredit(11112l,"Accenture Test", "2010-05-20");
+		CreditCard pere = new PereCredit(11113l,"Accenture Test", "2020-05-20");
 
 		// Detallo toda la información de la tarjeta
-		squa.getInfoCard();
-		sco.getInfoCard();
-		pere.getInfoCard();
+		System.out.println(squa.getInfoCard());
+		System.out.println(sco.getInfoCard());
+		System.out.println(pere.getInfoCard());
+		
 
 		// Valido el importe ingresado
 		squa.isValidOperation(13.9F);
@@ -26,6 +26,11 @@ public class MainCreditCard {
 
 		// Valido si es la misma tarjeta ingresado
 		squa.isDifferentCard(pere);
+		
+		// valido si no esta expirado la fecha de vencimiento de la tarjeta
+		squa.isCardValidInfo();
+		sco.isCardValidInfo();
+		pere.isCardValidInfo();
 	}
 
 	//Obtener por medio de un método la tasa de una operación informando
@@ -34,13 +39,13 @@ public class MainCreditCard {
 		CreditCard credi = null;
 		switch (type) {
 		case "SQUA":
-			credi = new SquaCred();
+			credi = new SquaCred(11112l,"Accenture Test", "2020-05-20");
 			break;
 		case "PERE":
-			credi = new PereCredit();
+			credi = new PereCredit(11113l,"Accenture Test", "2020-05-20");
 			break;
 		case "SCO":
-			credi = new ScoCredit();
+			credi = new ScoCredit(11114l,"Accenture Test", "2020-05-20");
 			break;
 		default:
 			break;
@@ -51,8 +56,4 @@ public class MainCreditCard {
 		return 0f;
 	}
 	
-	public void cobrar() {
-		
-	}
-
 }
