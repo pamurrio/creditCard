@@ -11,7 +11,7 @@ import com.accenture.exercise.creditcard.controller.CreditCardController;
 public class CreditCardWebServices {
 
 	@Autowired
-	public CreditCardController creditCard;
+	private CreditCardController creditCard;
 
 	@GetMapping("/creditCard/infoCardByTypeAndAmount/{type}/{amount}")
 	Float infoCardByTypeAndAmount(@PathVariable String type, @PathVariable Float amount) {
