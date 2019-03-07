@@ -55,5 +55,4 @@ public class MainCreditCard {
 		}
 		return 0f;
 	}
-	
 }
